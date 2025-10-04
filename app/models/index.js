@@ -36,7 +36,7 @@ db.sequelize = sequelize;
 
 // ================== IMPORTACIÓN DE MODELOS ==================
 db.usuarios    = require("./usuario.model.js")(sequelize, Sequelize);
-db.peliculas   = require("./pelicula.model.js")(sequelize, Sequelize);
+db.peliculas   = require("./Pelicula.model.js")(sequelize, Sequelize);
 db.salas       = require("./sala.model.js")(sequelize, Sequelize);
 db.asientos    = require("./asiento.model.js")(sequelize, Sequelize);
 db.funciones   = require("./funcion.model.js")(sequelize, Sequelize);
