@@ -37,10 +37,10 @@ db.sequelize = sequelize;
 // ================== IMPORTACIÓN DE MODELOS ==================
 db.usuarios    = require("./usuario.model.js")(sequelize, Sequelize);
 db.peliculas   = require("./Pelicula.model.js")(sequelize, Sequelize);
-db.salas       = require("./sala.model.js")(sequelize, Sequelize);
-db.asientos    = require("./asiento.model.js")(sequelize, Sequelize);
-db.funciones   = require("./funcion.model.js")(sequelize, Sequelize);
-db.reservas    = require("./reserva.model.js")(sequelize, Sequelize);
+db.salas       = require("./Sala.model.js")(sequelize, Sequelize);
+db.asientos    = require("./Asiento.model.js")(sequelize, Sequelize);
+db.funciones   = require("./Funcion.model.js")(sequelize, Sequelize);
+db.reservas    = require("./Reserva.model.js")(sequelize, Sequelize);
 db.pagos       = require("./pago.model.js")(sequelize, Sequelize);
 db.promociones = require("./promocion.model.js")(sequelize, Sequelize);
 
