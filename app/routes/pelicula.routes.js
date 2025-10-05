@@ -1,14 +1,23 @@
-module.exports = app => {
-  const peliculas = require("../controllers/pelicula.controller.js");
+const express = require("express");
+const router = express.Router();
+const peliculas = require("../controllers/pelicula.controller.js");
 
-  var router = require("express").Router();
+// Crear película
+router.post("/create", peliculas.create);
 
-  router.post("/create", peliculas.create);
-  router.get("/", peliculas.findAll);
-  router.get("/:id", peliculas.findOne);
-  router.put("/update/:id", peliculas.update);
-  router.delete("/delete/:id", peliculas.delete);
-  router.delete("/delete", peliculas.deleteAll);
+// Obtener todas las películas
+router.get("/", peliculas.findAll);
 
-  app.use("/api/peliculas", router);
-};
+// Obtener película por ID
+router.get("/:id", peliculas.findOne);
+
+// Actualizar película
+router.put("/:id", peliculas.update);
+
+// Eliminar película por ID
+router.delete("/:id", peliculas.delete);
+
+// Eliminar todas las películas
+router.delete("/", peliculas.deleteAll);
+
+module.exports = router;

@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const usuarios = require("../controllers/usuario.controller.js");
-module.exports = app=>{
+
 // Crear nuevo usuario
 router.post("/create", usuarios.create);
 
@@ -19,6 +19,6 @@ router.delete("/:id", usuarios.delete);
 
 // Eliminar todos los usuarios
 router.delete("/", usuarios.deleteAll);
-app.use("/api/usuario", router);
 
-};
+// ✅ Exportamos el router directamente
+module.exports = router;
